@@ -4,11 +4,18 @@ services:
   ollama:
     image: ollama/ollama
     container_name: ollama
+    entrypoint: >
+      sh -c "
+        ollama serve &
+        sleep 3 &&
+        ollama pull gemma3:4b &&
+        tail -f /dev/null
+      "
     ports:
       - "11434:11434"
     volumes:
       - ollama-data:/root/.ollama
-    tty: true
+
 
   backend:
     build: ./backend

@@ -21,7 +21,8 @@ app = FastAPI()
 # Load Ollama LLM with deterministic output
 llm = ChatOllama(
     model="gemma3:4b",
-    default_ollama_options={"temperature": 0.7}
+    base_url="http://ollama:11434",
+    temperature=0.7
 )
 
 # === Request model ===

@@ -4,7 +4,7 @@ import re
 
 st.set_page_config(page_title="Gym Assistant", layout="wide")
 
-API_BASE = "http://localhost:8000"
+API_BASE = "http://backend:8000"
 
 # === UTIL: Clean + format streamed markdown ===
 def format_response(raw: str) -> str:
